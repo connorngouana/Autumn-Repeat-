@@ -5,20 +5,19 @@ public class Hotel_User_Info
     public String Title;
     public String Name;
     public int Age;
-    public String Email;
     public String Phone;
     public String Id;
 
-    public Hotel_User_Info(String title,String name,int age,String email,String phone,String id )
+    public Hotel_User_Info(String title, String name, String phone, String id, int age)
     {
         this.Title = title;
         this.Name = name;
         this.Id = id;
-        this.Email = email;
         this.Phone = phone;
         this.Age = age;
 
     }
+
 
     public String getTitle()
     {
@@ -70,22 +69,6 @@ public class Hotel_User_Info
             throw new IllegalArgumentException("This is not a valid age, you must be 16 plus");
         }
 
-    }
-
-    public String getEmail()
-    {
-        return Email;
-    }
-
-    public void setEmail(String email)
-    {
-        if (email == "@gmail.com")
-        {
-            this.Email = email;
-        } else
-        {
-            throw new IllegalArgumentException("Invalid email format");
-        }
     }
 
     public String getPhone()
