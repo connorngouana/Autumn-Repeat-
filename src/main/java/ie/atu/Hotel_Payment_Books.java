@@ -68,7 +68,7 @@ public class Hotel_Payment_Books
         return Discount_Code;
     }
 
-    public void setDiscount_Rate(String discount_Code)
+    public void setDiscount_Code(String discount_Code)
     {
         if (Discount_Code == "JAVA" )
         {
