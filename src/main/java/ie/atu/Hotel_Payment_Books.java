@@ -20,9 +20,11 @@ public class Hotel_Payment_Books
         return Length_of_Stay;
     }
 
-    public void setLength_of_Stay(int length_of_Stay) {
-        if (Length_of_Stay >= 0 && Length_of_Stay <= 30) {
-            this.Length_of_Stay = length_of_Stay;
+    public void setLength_of_Stay(int length_of_Stay)
+    {
+        if (length_of_Stay > 0 && length_of_Stay <= 30)
+        {
+            Length_of_Stay = length_of_Stay;
         }
         else
         {
@@ -36,13 +38,13 @@ public class Hotel_Payment_Books
 
     public void setRoom_Rate(int room_Rate)
     {
-        if (Room_Rate == 100)
+        if (room_Rate == 100)
         {
             this.Room_Rate = room_Rate;
         }
         else
         {
-            throw new IllegalArgumentException("The standard rate of aa room is 100e");
+            throw new IllegalArgumentException("The standard rate of a room is 100");
         }
     }
 
@@ -51,11 +53,11 @@ public class Hotel_Payment_Books
         return Tax_Rate;
     }
 
-    public void setTax_Rate(double tax_Rate)
+    public void setTax_Rate(int length_of_Stay)
     {
-        if ( Tax_Rate == Length_of_Stay )
+        if ( Tax_Rate == length_of_Stay  )
         {
-            this.Tax_Rate = tax_Rate;
+            this.Tax_Rate = length_of_Stay;
         }
         else
         {
@@ -70,13 +72,13 @@ public class Hotel_Payment_Books
 
     public void setDiscount_Code(String discount_Code)
     {
-        if (Discount_Code == "JAVA" )
+        if (discount_Code.length() == 4)
         {
-            this.Discount_Code = discount_Code;
+            Discount_Code = discount_Code;
         }
         else
         {
-            throw new IllegalArgumentException("Invalid Discount code try again...");
+            throw new IllegalArgumentException("Invalid Discount code try again");
         }
     }
 
