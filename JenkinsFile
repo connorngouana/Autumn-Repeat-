@@ -1,31 +1,32 @@
 pipeline
 {
    agent any
-       stage("build")
+   stages
+   {
+   stage('build')
+   {
+    steps
     {
-           steps
-        {
-            git 'https://github.com/connorngouana/Autumn-Repeat-.git'
-            sh './mvnw clean compile'
-            //bat '\mvnw clean compolie'
-       }
+    echo 'building the application...'
+        sh './mvnw clean compile'
     }
-  }
-        stage('test')
-    {
-        steps
-        {
-            sh './mvnw test'
-            //bat '\mvnw test'
-        }
-        post
-        {
-            always
+   }
+   stage('test')
+      {
+       steps
+       {
+        echo 'testing the application...'
+           sh './mvnw test'
+       }
+      }
+      stage('deploy')
             {
-            junit '**/target/surefire-reports/TEST-*.xml'
+             steps
+             {
+              echo 'deploying the application...'
+                 sh './mvnw test'
+             }
             }
-           }
-        }
     }
 }
 
