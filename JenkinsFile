@@ -6,6 +6,7 @@ git'https://github.com/connorngouana/Autumn-Repeat-.git'
 }
 stage('Compile-Package')
 {
-sh 'mvn package'
+def mvnHome = tool name: 'mymaven', type: 'maven'
+sh "${mvnHome}/bin/mvn package"
 }
 }
