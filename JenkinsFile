@@ -5,11 +5,12 @@ pipeline
     {
            steps
         {
-            git'https://github.com/connorngouana/Autumn-Repeat-.git'
-            sh './mvnw clean compolie'
+            git 'https://github.com/connorngouana/Autumn-Repeat-.git'
+            sh './mvnw clean compile'
             //bat '\mvnw clean compolie'
        }
     }
+  }
         stage('test')
     {
         steps
@@ -23,6 +24,7 @@ pipeline
             {
             junit '**/target/surefire-reports/TEST-*.xml'
             }
+           }
         }
     }
 }
