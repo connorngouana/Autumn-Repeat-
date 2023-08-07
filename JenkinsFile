@@ -1,29 +1,29 @@
 pipeline
 {
-agent any
-stage("build")
-{
-steps
-{
-git'https://github.com/connorngouana/Autumn-Repeat-.git'
-sh './mvnw clean compolie'
-//bat '\mvnw clean compolie'
-}
-}
-stage('test')
-{
-steps
-{
-sh './mvnw test'
-//bat '\mvnw test'
-}
-post
-{
-    always
+   agent any
+       stage("build")
     {
-        junit '**/target/surefire-reports/TEST-*.xml'
+           steps
+        {
+            git'https://github.com/connorngouana/Autumn-Repeat-.git'
+            sh './mvnw clean compolie'
+            //bat '\mvnw clean compolie'
+       }
+    }
+        stage('test')
+    {
+        steps
+        {
+            sh './mvnw test'
+            //bat '\mvnw test'
+        }
+        post
+        {
+            always
+            {
+            junit '**/target/surefire-reports/TEST-*.xml'
+            }
+        }
     }
 }
-}
-}
-}
+
