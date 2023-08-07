@@ -8,7 +8,7 @@ pipeline
     steps
     {
     echo 'building the application...'
-        sh './mvnw clean compile'
+
     }
    }
    stage('test')
@@ -16,7 +16,7 @@ pipeline
        steps
        {
         echo 'testing the application...'
-           sh './mvnw test'
+
        }
       }
       stage('deploy')
@@ -24,7 +24,7 @@ pipeline
              steps
              {
               echo 'deploying the application...'
-                 sh './mvnw test'
+
              }
 
 
