@@ -26,6 +26,8 @@ pipeline
               echo 'deploying the application...'
                  sh './mvnw test'
              }
+
+
             }
     }
 }
